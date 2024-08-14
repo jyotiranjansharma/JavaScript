@@ -53,3 +53,88 @@ Modern browsers use compositing layers to efficiently manage complex layouts and
 
 12. Display
 Finally, the fully rendered web page is displayed in the browser window, ready for user interaction.
+
+# Key points to consider while understanding javascript
+Here are the key points:
+
+- **High-Level Code to Machine Code:**
+  - Understand the process of translating high-level JavaScript code into machine code and its execution as a stack frame on the call stack.
+
+- **Memory and Primitive Types:**
+  - Understand how different primitive types are stored in memory, including addresses, space allocation, and binary representation.
+  - Recognize the concept of mantissa in floating-point representations.
+
+- **Value Types vs. Reference Types:**
+  - Differentiate between value types and reference types.
+  - Understand the implications of assigning values vs. assigning pointers.
+
+- **Typing Systems:**
+  - Understand implicit typing, explicit typing, nominal typing, structural typing, and duck typing.
+
+- **Comparison and Type Checking:**
+  - Distinguish between `==`, `===`, and `typeof` in JavaScript.
+
+- **Scopes:**
+  - Understand function scope, block scope, and lexical scope.
+
+- **Expressions and Statements:**
+  - Differentiate between an expression and a statement.
+  - Understand the concept of evaluating an expression.
+
+- **Memory and Call Stack:**
+  - Understand what happens in memory/on the call stack when evaluating expressions, passing arguments, returning results, and assigning or retrieving values.
+
+- **IIFE’s, Modules, and Namespaces:**
+  - Understand Immediately Invoked Function Expressions (IIFE's), modules, and namespaces.
+  - Recognize why ES6 modules and block scope don't fully replace IIFE's.
+
+- **Event Loop and Message Queue:**
+  - Understand how the message queue and event loop work in JavaScript, including timing, async behavior, 
+  and handling browser APIs like `setTimeout`, `setInterval`, and `requestAnimationFrame`.
+
+- **Performance and Optimization:**
+  - Identify more expensive operations in terms of processing time or memory.
+  - Use tools like `jsperf` and `performance.now` for performance testing.
+  - Understand Big O notation and its relevance.
+
+- **JavaScript Engines:**
+  - Understand optimizations (opts) and deoptimizations (deopts) across different JavaScript engines.
+
+- **Number Representations:**
+  - Represent numbers in binary, hex, decimal, and scientific notation in JavaScript and other languages.
+
+- **Binary Data Manipulation:**
+  - Understand bitwise operators, typed arrays, and array buffers.
+  - Use RGBA as a context for manipulating binary data.
+
+- **Object-Oriented Concepts:**
+  - Understand `new`, constructors, `instanceof`, and instances.
+  - Recognize prototypical inheritance, the prototype chain, and the limitations of classical inheritance in JavaScript.
+  - Differentiate between `Object.create` and `Object.assign`.
+
+- **Design Patterns and Inheritance:**
+  - Understand the factory and class design patterns.
+  - Differentiate between member properties and properties on the prototype.
+  - Recognize the "is a" vs. "has a" relationships in inheritance and polymorphism.
+
+- **Functional Programming Concepts:**
+  - Understand pure functions, side effects, and state mutation.
+  - Use `map`, `reduce`, and `filter` to replace for/while loops.
+  - Understand lambdas, closures, higher-order functions, and their usage.
+
+- **Abstract Data Structures:**
+  - Understand abstract data structures, their implementation in JavaScript, and typical use cases.
+  - Recognize the use of recursion in building abstract data structures.
+
+- **Algorithm Familiarity:**
+  - Be familiar with common algorithms and how to find the right one for specific problems.
+
+- **Design Patterns:**
+  - Become familiar with common design patterns and their applications in JavaScript.
+
+- **Functional Techniques:**
+  - Understand partial functions, currying, compose, and pipe.
+  - Recognize the utility of unary functions.
+
+- **Reflection in JavaScript:**
+  - Understand how reflection works differently in JavaScript compared to strongly typed, compiled languages.
