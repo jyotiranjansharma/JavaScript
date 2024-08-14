@@ -1,10 +1,7 @@
 # JavaScript
- Learn and practice continously
-
-
- #How does a web browser work?
+Learn and practice continously
  
-HOW DOES A WEB BROWSER WORK ?
+# HOW DOES A WEB BROWSER WORK ?
 
 Web browsers are complex software applications that allow users to access and interact with content on the World Wide Web. 
 They work by interpreting and displaying web pages and applications written in HTML, CSS, JavaScript, and other web technologies. 
