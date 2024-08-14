@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practices</title>
+        <script src="practiceScript.js"></script>
+        <style>
+            .container{
+                display: grid;
+                /* grid-template-columns: 1fr 1fr 1fr; */
+                grid-template-columns: repeat(4, 1fr);
+                /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+                grid-gap: 20px;
+                /* grid-auto-rows: 100px; */
+                /* grid-auto-columns: 50px; */
+                grid-auto-rows: minmax(100px, auto);
+                grid-auto-columns: minmax(50px, auto);
+                column-gap: 50px;
+                row-gap: 50px;
+            }
+            .items{
+                background-color: darkgoldenrod;
+                border: 1px solid black;
+                border-radius: 2px;
+            }
+
+            #item-2 {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+            #item-1 {
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+
+            .item-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 20px;
+            }
+
+            .nested-item{
+                padding: 15px;
+                text-align: center;
+                border: 1px solid white;
+                border-radius: 2px;
+                background-color: rebeccapurple;
+                color: white;
+            }
+
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #f0f0f0;
+                padding: 20px;
+            }
+
+            .flex-item {
+                background-color: #4CAF50;
+                padding: 20px;
+                color: white;
+                border-radius: 5px;
+                flex: 1;
+                margin: 5px;
+            }
+
+            .flex-container1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #f0f0f0;
+                height: 100vh; /* Full height to center vertically */
+            }
+
+            .center-item1 {
+                background-color: #4CAF50;
+                padding: 20px;
+                color: white;
+            }
+
+            .grid-container {
+                display: grid;
+                place-items: center;
+                height: 100vh; /* Full height to center vertically */
+                background-color: #f0f0f0;
+            }
+
+            .grid-item {
+                background-color: #4CAF50;
+                padding: 20px;
+                color: white;
+            }
+
+            .center-container {
+                width: 100%;
+                background-color: #f0f0f0;
+            }
+
+            .center-box {
+                width: 200px;
+                background-color: #4CAF50;
+                padding: 20px;
+                color: white;
+                margin: auto; /* Centers the box horizontally */
+            }
+
+            .grid-container1 {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 10px;
+                background-color: #11973c;
+                padding: 10px;
+            }
+
+            .grid-container1 > div {
+                background-color: rgba(255, 255, 255, 0.577);
+                border: 1px solid black;
+                text-align: center;
+                font-size: 30px;
+            }
+            .cssBoxModel{
+                background-color: lightgrey;
+                /* width: 300px; */
+                border: 15px solid green;
+                padding: 50px;
+                margin: 20px;
+                display: grid;
+                place-items: center;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- <div>
+            <span>asap</span>
+            <span style="position: relative;">psap</span>
+        </div>
+        <h1>Practice Hub</h1>
+        <h3>Description List</h3>
+        <dl>
+            <dt>1. term 1</dt>
+            <dd>description</dd>
+            <dt>2. term 2</dt>
+            <dd>description</dd>
+        </dl>
+
+        <h3>Debounce</h3>
+        <input type="text" name="" id="" onkeyup="betterFunction()"> -->
+
+        <h3>CSS Grids</h3>
+        <div class="container">
+            <div class="items" id="item-1">
+                <div class="item-container">
+                    <div class="nested-item">nested item</div>
+                    <div class="nested-item">nested item</div>
+                    <div class="nested-item">nested item</div>
+                    <div class="nested-item">nested item</div>
+                </div>
+            </div>
+            <div class="items" id="item-2">item 2</div>
+            <div class="items">item 3</div>
+            <div class="items">item 4</div>
+            <div class="items">item 5</div>
+        </div>
+
+        <!-- <div class="" style="margin-top: 20px;text-align: center;border: 1px solid black;">
+            <button onclick="getThePageContents()">
+                Print the page
+            </button>
+        </div> -->
+
+        <h3>Centering with Css Grid Layout</h3>
+        <div class="grid-container">
+            <div class="grid-item">Centered Item</div>
+        </div>
+
+        <h3>FlexBox</h3>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <h3>Get item to center Vertically and Horizontally with Flexbox</h3>
+        <div class="flex-container1">
+            <div class="center-item1">Centered Item</div>
+        </div>
+
+        <h3>Centering with Margin Auto (for block elements)</h3>
+        <div class="center-container">
+            <div class="center-box">Centered Box</div>
+        </div>
+        <h3>
+            CSS POSITIONING
+        </h3>
+        
+        <div class="grid-container1" >
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <!-- When you make an HTML element position: relative, it’ll remain “in the flow” of the layout but you can move it around! -->
+            <div class="grid-item" style="position: relative;top: 40px;right: 175px;">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <!-- Using position: absolute takes elements “out of flow” so its grid space gets collapsed. -->
+            <div class="grid-item" style="position: absolute;">8</div>
+        </div>
+
+        <!-- CSS BOX MODEL -->
+        <!-- content>padding>border>margin -->
+        <div class="cssBoxModel">
+            content
+        </div>
+    </body>
+</html>

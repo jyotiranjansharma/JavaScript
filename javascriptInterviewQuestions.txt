@@ -1,0 +1,43 @@
+Core JavaScript Concepts
+    Explain event delegation in JavaScript. How does it work, and what are its benefits?
+    What are closures in JavaScript? Can you provide an example of how and where you’ve used them?
+    Describe the difference between var, let, and const. How do their scopes differ?
+    How does prototypal inheritance work in JavaScript? Can you demonstrate with a code example?
+    What is the significance of the this keyword in JavaScript? How does it behave differently in various contexts (e.g., function vs. arrow function)?
+    Explain the concept of promises and how they can be chained. How do async/await work with promises?
+
+Advanced Topics
+    What are the differences between synchronous and asynchronous code in JavaScript? How do you handle asynchronous operations?
+    How does the event loop work in JavaScript? Can you explain it with an example involving setTimeout?
+    Describe how you would optimize the performance of a large-scale JavaScript application.
+    What is memoization, and how can it be implemented in JavaScript?
+    Can you explain what the debounce and throttle functions are? How do you implement them in JavaScript?
+
+ES6+ Features
+    How do destructuring assignments work in JavaScript? Can you provide examples with arrays and objects?
+    What are JavaScript generators? How do they differ from regular functions? Provide an example of where you might use one.
+    Explain the Map and Set data structures introduced in ES6. How do they differ from regular objects and arrays?
+    What is the purpose of the Symbol data type in JavaScript?
+
+Frameworks and Libraries
+    What are some common design patterns you have used in your JavaScript applications? Can you provide an example?
+    How do you manage state in a large JavaScript application? What libraries or approaches do you prefer?
+    Explain the concept of Higher-Order Components (HOCs) and how they are used in libraries like React.
+    What are some best practices for organizing and structuring JavaScript code in large projects?
+
+Testing and Debugging
+    How do you approach testing JavaScript code? What tools and methodologies do you use?
+    Explain how you would debug a complex issue in a JavaScript application.
+    How do you handle exceptions and errors in JavaScript? What strategies do you use for error handling and logging?
+
+Real-World Scenarios
+    Describe a challenging bug you encountered in a JavaScript application. How did you resolve it?
+    Have you worked with JavaScript build tools like Webpack, Babel, or Gulp? How did you configure them for your projects?
+    What considerations do you take into account when writing JavaScript code that will run in different browsers?
+    
+Miscellaneous
+    Explain the difference between null and undefined in JavaScript.
+    What are IIFEs (Immediately Invoked Function Expressions)? Why and how would you use them?
+    How do you ensure the security of a JavaScript application? What practices do you follow to prevent XSS and other vulnerabilities?
+    How do you work with JavaScript modules? What are the differences between CommonJS, AMD, and ES6 modules?
+    Describe the concept of hoisting in JavaScript. What variables and functions are hoisted, and what are the implications?
