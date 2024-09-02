@@ -345,3 +345,26 @@ valueB = valueA
 valueB[0].Ramesh = 500;
 console.log(valueA[0].Ramesh);
 console.log(valueB[0].Ramesh);
+
+// Write a program to get the output in this format
+// "0 6 11 15 18 20 21 21"
+// "1 7 12 16 19 21 22"
+// "2 8 13 17 20 22"
+// "3 9 14 18 21"
+// "4 10 15 19"
+// "5 11 16"
+// "6 12"
+
+
+function printFormat(n) {
+    for (let i = 0; i <= n; i++) {
+        let a = '' + i
+        let lastNum = i
+        for (let j = 0; j <= n - i; j++) {
+            lastNum = n - j + lastNum
+            a = a + " " + lastNum
+        }
+        console.log(a)
+    }
+}
+printFormat(6)

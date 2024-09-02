@@ -72,6 +72,21 @@ firstOperation()
         console.error("Error:", error);
     });
 
+// CONVERTING THE CODE USING ASYNC AWAIT
+const firstOperation1 = async() => {
+    try {
+        const result1 = await firstOperation()
+        console.log('result 1 in async await', result1)
+        const result2 = await secondOperation(result1)
+        console.log('result 2 in async await', result2)
+        const result3 = await thirdOperation(result2)
+        console.log('result 3 in async await', result3)
+    } catch (error) {
+        console.error("Error", error)
+    }
+}
+firstOperation1()
+
 
 // ----------------------------------------------------------------------------------------------------
 // PROMISE.ALL()

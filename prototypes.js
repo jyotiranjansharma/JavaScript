@@ -83,4 +83,8 @@ Array.prototype.sum = function () {
 const numbers = [1, 2, 3, 4, 5];
 console.log(numbers.sum()); // Output: 15
 
-  
+String.prototype.welcome = function() {
+    return `Welcome ${this}`
+}
+
+console.log("Sharma".welcome())

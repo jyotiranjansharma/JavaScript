@@ -1,3 +1,14 @@
+
+const checkbox = document.querySelector("#id-checkbox");
+
+checkbox.addEventListener("click", checkboxClick, false);
+
+function checkboxClick(event) {
+    const warn = "preventDefault() won't let you check this!\n";
+    document.getElementById("output-box").innerText += warn;
+    event.preventDefault();
+}
+
 // PRACTICE  JAVASCRIPT  CODINGS
 // 1. Write a JavaScript program to display the current day and time in the following format.  
 // Sample Output : Today is : Tuesday.
@@ -499,8 +510,78 @@ const diff = (arr1e, arr2e) => {
 
 console.log('difference of two arrays', diff([1, 2, 3],[100, 2, 1, 10]))
 
-// 33 Merge Problem
+// 33
+var array1 = "john".split('');
+var array2 = array1.reverse();
+var array3 = "jones".split('');
+array2.push(array3);
+console.log("array 1: length=" + array1.length + " last=" + array1.slice(-1));
+console.log("array 2: length=" + array2.length + " last=" + array2.slice(-1));
 
+// 34. Fibonacci series
+function fibonacci(num) {
+    if (num == 1)
+        return 0;
+    if (num == 2)
+        return 1;
+    return fibonacci(num - 1) + fibonacci(num - 2);
+}
+console.log("Fibonacci(5): " + fibonacci(5));
+console.log("Fibonacci(8): " + fibonacci(8));
+
+// Example 35 closure
+(function () {
+    try {
+        throw new Error();
+    } catch (x) {
+        var x = 1, y = 2;
+        console.log(x);
+    }
+    console.log(x);
+    console.log(y);
+})();
+
+
+// // 4. factorial of a given number
+// A factorial number is the product of all positive integers, which are equal to or less than the given number.
+const num1 = 13
+function factorial(num1) { 
+    if (num1 === 0 || num1 === 1) return 1; 
+    return num1 * factorial(num1 - 1); 
+}
+console.log('The factorial is ', factorial(num1));
+
+// Get the output as 'abbbbbbbbbb' if given input as 'a1b10'
+
+function expandString(input) {
+    let output = '';
+    let i = 0;
+
+    while (i < input.length) {
+        let char = input[i]; // Get the character
+        i++;
+
+        let numStr = '';
+        // Collect the digits following the character
+        while (i < input.length && !isNaN(input[i])) {
+            numStr += input[i];
+            i++;
+        }
+
+        // Repeat the character based on the number
+        let count = parseInt(numStr, 10);
+        output += char.repeat(count);
+    }
+
+    return output;
+}
+
+// const input = 'a1b10';
+// const result = expandString(input);
+// console.log(result); // Output: abbbbbbbbbb
+
+
+// --------------------------------------------L2 Round Opus Client round--------------------------------------------------------------
 // Merge student and department object taking id as identity critria 
 
 // Expectation
@@ -555,36 +636,16 @@ const departments = [
 const arr3 = students.map((item, i) => Object.assign({}, item, departments[i]))
 console.log('merged array', arr3)
 
-
+// what is the output?
 var array1 = "john".split('');
 var array2 = array1.reverse();
 var array3 = "jones".split('');
 array2.push(array3);
-console.log("array 1: length=" + array1.length + " last=" + array1.slice(-1));
-console.log("array 2: length=" + array2.length + " last=" + array2.slice(-1));
+console.log("array 1: length=" + array1.length + " last=" + array1.slice(-1)); // "array 1: length=5 last=j,o,n,e,s"
+console.log("array 2: length=" + array2.length + " last=" + array2.slice(-1)); // "array 2: length=5 last=j,o,n,e,s"
 
-// 34. Fibonacci series
-function fibonacci(num) {
-    if (num == 1)
-        return 0;
-    if (num == 2)
-        return 1;
-    return fibonacci(num - 1) + fibonacci(num - 2);
-}
-console.log("Fibonacci(5): " + fibonacci(5));
-console.log("Fibonacci(8): " + fibonacci(8));
 
-// Example 35 closure
-(function () {
-    try {
-        throw new Error();
-    } catch (x) {
-        var x = 1, y = 2;
-        console.log(x);
-    }
-    console.log(x);
-    console.log(y);
-})();
+// ------------------------------------------------L2 Round Capgemini-------------------------------------------------------------
 
 // example 36 find the age given a name as argument else return false
 var userList = [
@@ -665,16 +726,13 @@ console.log(findOccurance())
 //     "Toyota": 1
 // }
 
-// // 4. factorial of a given number
-// A factorial number is the product of all positive integers, which are equal to or less than the given number.
-const num1 = 13
-function factorial(num1) { 
-    if (num1 === 0 || num1 === 1) return 1; 
-    return num1 * factorial(num1 - 1); 
-}
-console.log('The factorial is ', factorial(num1));
 
-// find the longest words and adda hashtag to them - question from TAVANT L2 round
+// --------------------------------------------Tavant L2 round coding questions--------------------------------------------------------
+
+// find the first 3 longest words and add a hashtag to them - question from TAVANT L2 round
+// input: "Tavant is a digital products and solutions company founded in 2000, headquartered in Santa Clara"
+// output: ["#headquartered", "#solutions", "#products"]
+
 let input = "Tavant is a digital products and solutions company founded in 2000, headquartered in Santa Clara";
 function convertToHashtags(input) {
     const words = input.split(' ');
@@ -702,32 +760,91 @@ String.prototype.welcome = function () {
 const name = "Sharma"
 console.log("sharma".welcome())
 
+// --------------------------------------------------R2 Round at Accolite coding questions--------------------------------------------------
 
-// Get the output as 'abbbbbbbbbb' if given input as 'a1b10'
+// write a code to extract the string characters at the provided indexes
+/* input = "hello"
+input1 = "1,2"
+output = "hlo" */
 
-function expandString(input) {
-    let output = '';
-    let i = 0;
+function GFG_Fun(str, ...indexes) {
+    let arr = str.split('')
+    arr = arr.filter((value, index) => !indexes.includes(index));
+    console.log(arr);
+}
+const removestr = GFG_Fun("hello", 1, 2)
+console.log(removestr)
 
-    while (i < input.length) {
-        let char = input[i]; // Get the character
-        i++;
+// find the number of occurances in the array and display in object format
+/* input = [1,2,3,4,5,4,5];
+ouput = {
+1:1,
+2:1,
+3:1,
+4:2,
+5:2
+} */
 
-        let numStr = '';
-        // Collect the digits following the character
-        while (i < input.length && !isNaN(input[i])) {
-            numStr += input[i];
-            i++;
-        }
-
-        // Repeat the character based on the number
-        let count = parseInt(numStr, 10);
-        output += char.repeat(count);
-    }
-
-    return output;
+function countOccurances(arr) {
+    const res = {}
+    arr.forEach(item => {
+        res[item] = (res[item] || 0) + 1
+    })
+    return res
 }
 
-// const input = 'a1b10';
-// const result = expandString(input);
-// console.log(result); // Output: abbbbbbbbbb
+const inputArr = [1, 2, 3, 4, 5, 4, 5]
+const occur = countOccurances(inputArr)
+console.log(occur)
+
+// Flatten the array without using in-built flat() method
+/* input = [1,2,[3,4,[5,[6]]],[7,8,[9]],10]
+output = [1,2,3,4,5,6,7,8,9,10]; */
+function flatten(arr) {
+    return arr.reduce((acc, val) =>
+        Array.isArray(val) ?
+            acc.concat(flatten(val)) :
+            acc.concat(val), [])
+}
+
+const tryFlatArr = [1, 2, [3, 4, [5, [6]]], [7, 8, [9]], 10]
+const flattened = flatten(tryFlatArr)
+console.log(flattened)
+
+// --------------------------------------------ITC Infotech L1 Round coding questions----------------------------------------------------
+// display the name from indexObj if the id is included in the indexArr
+let indexArr = [1,2,3,4,5]
+let indexObj = [
+{
+	'name': 'jai', 'id': 1
+}, {
+	'name': 'jack', 'id': 4
+}, {
+	'name': 'john', 'id': 6
+}
+]
+
+indexObj.forEach((item) => {
+	if(indexArr.includes(item.id)) {
+  	console.log(item.name)
+  }
+})
+
+// output #1
+let az = 0
+// let az = 1 // identifier has already been declared
+console.log(az)
+
+// output #2
+let sd = 12
+{
+    let sd = 24 //not accessible because of block scoping.
+}
+console.log(sd); // output: 12
+
+// Output #3
+for(var i=0;i<3;i++) {
+    console.log(i)
+}
+console.log(i); //output: 0 1 2 3
+

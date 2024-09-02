@@ -1,5 +1,6 @@
 // Currying is a technique in functional programming where a function is transformed into a sequence of functions, each taking a single argument. 
-// Instead of taking all arguments at once, a curried function takes one argument and returns a new function that accepts the next argument, and so on, until all arguments have been provided.
+// Instead of taking all arguments at once, a curried function takes one argument and returns a new function that accepts the next argument, and so on, 
+// until all arguments have been provided.
 
 // Example 1: Manual Currying
 // Function to add three numbers
