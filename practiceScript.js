@@ -848,3 +848,521 @@ for(var i=0;i<3;i++) {
 }
 console.log(i); //output: 0 1 2 3
 
+// ------------------------------------------Altimetik L1 coding questions------------------------------------------
+function createCounter() {
+    let count = 0;
+
+    return {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getValue: function() {
+            return count;
+        }
+    };
+}
+
+const counter = createCounter();
+
+console.log(counter.increment()); // 1
+console.log(counter.increment()); // 2
+console.log(counter.decrement()); // 1
+console.log(counter.getValue());  // 1
+
+
+// Create a half circle using css
+{/* <style>
+        .half-circle {
+            width: 200px;
+            height: 100px;
+            background-color: #3498db;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+        }
+</style> */}
+
+// ---------------------------------------------------Vation Digital coding screening------------------------------------------------------------
+// Solve all the questions without any inbuilt functions
+// 1. Reverse a String
+
+function reverseString(str) {
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+// 2. Find the Maximum Element in an Array
+
+function findMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+// 3. Check if a String is a Palindrome
+
+function isPalindrome(str) {
+    let start = 0;
+    let end = str.length - 1;
+    while (start < end) {
+        if (str[start] !== str[end]) {
+            return false;
+        }
+        start++;
+        end--;
+    }
+    return true;
+}
+// 4. Find the Missing Number in an Array
+
+function findMissingNumber(arr, n) {
+    let total = n * (n + 1) / 2;
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return total - sum;
+}
+// 5. Find the Intersection of Two Arrays
+
+function findIntersection(arr1, arr2) {
+    let intersection = [];
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                intersection.push(arr1[i]);
+                break;
+            }
+        }
+    }
+    return intersection;
+}
+// 6. Remove Duplicates from an Array
+
+function removeDuplicates(arr) {
+    let unique = [];
+    for (let i = 0; i < arr.length; i++) {
+        let found = false;
+        for (let j = 0; j < unique.length; j++) {
+            if (arr[i] === unique[j]) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            unique.push(arr[i]);
+        }
+    }
+    return unique;
+}
+// 7. Count the Occurrence of Each Element in an Array
+
+function countOccurrences(arr) {
+    let counts = {};
+    for (let i = 0; i < arr.length; i++) {
+        let element = arr[i];
+        if (counts[element] === undefined) {
+            counts[element] = 1;
+        } else {
+            counts[element]++;
+        }
+    }
+    return counts;
+}
+// 8. Find the Second Largest Element in an Array
+
+function secondLargest(arr) {
+    let max = -Infinity;
+    let secondMax = -Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            secondMax = max;
+            max = arr[i];
+        } else if (arr[i] > secondMax && arr[i] != max) {
+            secondMax = arr[i];
+        }
+    }
+    return secondMax;
+}
+// 9. Merge Two Sorted Arrays
+
+function mergeSortedArrays(arr1, arr2) {
+    let merged = [];
+    let i = 0, j = 0;
+    
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            merged.push(arr1[i]);
+            i++;
+        } else {
+            merged.push(arr2[j]);
+            j++;
+        }
+    }
+    
+    while (i < arr1.length) {
+        merged.push(arr1[i]);
+        i++;
+    }
+    
+    while (j < arr2.length) {
+        merged.push(arr2[j]);
+        j++;
+    }
+    
+    return merged;
+}
+// 10. Find the Length of the Longest Substring Without Repeating Characters
+
+function longestSubstringWithoutRepeating(str) {
+    let maxLength = 0;
+    let start = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+        for (let j = start; j < i; j++) {
+            if (str[i] === str[j]) {
+                start = j + 1;
+                break;
+            }
+        }
+        maxLength = Math.max(maxLength, i - start + 1);
+    }
+    return maxLength;
+}
+// 11. Reverse a Linked List
+
+function ListNode(value) {
+    this.value = value;
+    this.next = null;
+}
+function reverseLinkedList(head) {
+    let prev = null;
+    let current = head;
+    
+    while (current !== null) {
+        let nextNode = current.next;
+        current.next = prev;
+        prev = current;
+        current = nextNode;
+    }
+    
+    return prev;
+}
+let node1 = new ListNode(1);
+let node2 = new ListNode(2);
+let node3 = new ListNode(3);
+let node4 = new ListNode(4);
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+let reversedHead = reverseLinkedList(node1);
+console.log(reversedHead)
+let current = reversedHead;
+while (current !== null) {
+    console.log(current.value);
+    current = current.next;
+}
+// 12. Implement a Stack Using an Array
+
+function Stack() {
+    this.items = []; // Initialize an empty array to hold stack elements
+
+    // Push operation to add an element to the stack
+    this.push = function(element) {
+        this.items[this.items.length] = element;
+    };
+
+    // Pop operation to remove and return the top element from the stack
+    this.pop = function() {
+        if (this.items.length === 0) {
+            return null; // Return null if stack is empty
+        }
+        let top = this.items[this.items.length - 1];
+        this.items.length--; // Reduce the size of the array (stack)
+        return top;
+    };
+
+    // Peek operation to return the top element without removing it
+    this.peek = function() {
+        if (this.items.length === 0) {
+            return null; // Return null if stack is empty
+        }
+        return this.items[this.items.length - 1];
+    };
+
+    // Method to check if the stack is empty
+    this.isEmpty = function() {
+        return this.items.length === 0;
+    };
+
+    // Method to get the size of the stack
+    this.size = function() {
+        return this.items.length;
+    };
+}
+
+// Example usage
+let stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+console.log(stack.peek());    // 30
+console.log(stack.pop());     // 30
+console.log(stack.pop());     // 20
+console.log(stack.isEmpty()); // false
+console.log(stack.size());    // 1
+// 13. Implement a Queue Using an Array
+
+function Queue() {
+    this.items = [];  // Initialize an empty array to hold queue elements
+    this.front = 0;   // The index of the front element
+    this.rear = 0;    // The index of the next available position to enqueue
+
+    // Enqueue: Adds an element to the back of the queue
+    this.enqueue = function(element) {
+        this.items[this.rear] = element;
+        this.rear++;
+    };
+
+    // Dequeue: Removes and returns the front element from the queue
+    this.dequeue = function() {
+        if (this.isEmpty()) {
+            return null; // Return null if queue is empty
+        }
+        let frontItem = this.items[this.front];
+        this.front++; // Move the front pointer to the next item
+        return frontItem;
+    };
+
+    // Peek: Returns the front element without removing it
+    this.peek = function() {
+        if (this.isEmpty()) {
+            return null;
+        }
+        return this.items[this.front];
+    };
+
+    // Check if the queue is empty
+    this.isEmpty = function() {
+        return this.rear === this.front;
+    };
+
+    // Get the size of the queue
+    this.size = function() {
+        return this.rear - this.front;
+    };
+}
+
+let queue = new Queue();
+
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+
+console.log(queue.peek());     // 10
+console.log(queue.dequeue());  // 10
+console.log(queue.dequeue());  // 20
+console.log(queue.isEmpty());  // false
+console.log(queue.size());     // 1
+console.log(queue.dequeue());  // 30
+console.log(queue.isEmpty());  // true
+
+// -------------------------------------------------------------Wipro coding questions----------------------------------------------------------
+// 1.  
+function longestCommonPrefix(strs) {
+    if (strs.length === 0) return '';
+
+    let prefix = strs[0];
+
+    for (let i = 0; i < strs.length; i++) {
+        while (strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.substring(0, prefix.length - 1);
+            if (prefix === '') return '';
+        }
+    }
+
+    return prefix;
+}
+
+const strings = ['flower', 'flow', 'flight', 'float'];
+console.log(longestCommonPrefix(strings)); // Output: 'fl'
+
+// 2. Reverse a string
+// const reverseString = (str) => {
+//     return str.split('').reverse().join('')
+// }
+// console.log(reverseString('hello')); // Output: 'olleh'
+
+// -----------------------------------------------------------------------------------------------------------------------------
+//  Write a code to find the vowels from a given string
+const findVowels = (str) => {
+    let vowels = ['a', 'e', 'i', 'o', 'u']
+    let vowelsfound = []
+    for(let i = 0; i < str.length; i++) {
+        if(vowels.includes(str[i])) vowelsfound.push(str[i])
+    }
+    return [...new Set(vowelsfound)];
+}
+console.log(findVowels("this is found here"))
+
+// How do you turn an Object into an Array []?
+let obj = {
+    id: "1",
+    name: "user22",
+    age: "26",
+    work: "programmer",
+};
+console.log(Object.keys(obj)) // Only get the keys from the obj 
+console.log(Object.values(obj)) //ONly gets the values from the obj 
+console.log(Object.entries(obj)) // gets all the elements in form of an array
+
+// Return if anagram
+function isAnagram(one, two) {
+    //Change both words to lowercase for case insensitivity..
+    var a = one.toLowerCase();
+    var b = two.toLowerCase();
+
+    // Sort the strings, then combine the array to a string. Examine the outcomes.
+    a = a.split("").sort().join("");
+    b = b.split("").sort().join("");
+
+    return a === b;
+}
+let firstWord = "manaadw";
+let secondWord = "Aman";
+const anagramCheck = isAnagram(firstWord, secondWord); // true
+console.log(anagramCheck)
+
+// ----------------------------------------------------VATION Digital--------------------------------------------------------------------
+// consume the api and display data in html(in html just declare a div with ID 'data-container')
+/* https://jsonplaceholder.typicode.com/users */
+const apiUrl = "https://jsonplaceholder.typicode.com/users";
+async function fetchData() {
+    let response;
+    try {
+        response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Http error')
+        }
+    } catch {
+        console.log('error')
+    }
+    const data = await response.json()
+    displayData(data)
+}
+
+function displayData(data) {
+    const container = document.getElementById('data-container')
+    container.innerHTML = ""
+    data.slice(0, 10).forEach(item => {
+        const div = document.createElement('div')
+        div.classList.add('item')
+
+        div.innerHTML = `The name is ${item.name}`
+        container.appendChild(div)
+    })
+}
+fetchData()
+
+// --------------------------------------------SASKEN - L1- Curatal---------------------------------------------------------
+/* extract numbers from strings and calculate the sum of the numbers
+const arr = ['abc123', 'abc234', 'abc', 'xyz0'];
+output: 123+234+0 = 357 */
+
+// Using REGEX
+function extract(arr) {
+    let total = 0;
+    arr.forEach(item => {
+        const nums = item.match(/\d+/g)
+        if (nums) {
+            total += nums.reduce((sum, n) => sum + parseInt(n), 0)
+        }
+    })
+    return total
+}
+
+// Without REGEX
+const sumOfNumbersInArray = (arr) => {
+    return arr
+        .map(item => {
+            // Extract the digits from each string
+            let numStr = '';
+            for (let char of item) {
+                if (!isNaN(char) && char !== ' ') {
+                    numStr += char; // Collect digits
+                }
+            }
+            return numStr ? Number(numStr) : 0; // Convert to number, or 0 if no digits
+        })
+        .reduce((total, num) => total + num, 0); // Sum up all the numbers
+}
+
+console.log('Using Regex', extract(['abc123', 'abc234', 'abc', 'xyz0']))
+console.log('Without using Regex', sumOfNumbersInArray(['abc123', 'abc234', 'abc', 'xyz0']))
+
+// --------------------------------------------------SASKEN L2-----------------------------------------------------------------------
+
+/* input = ['chi','gha','ahi']
+output = 'cgiiaahhh */
+
+// First way not sorted
+function combineStrings(input) {
+    let result = '';
+
+    // Find the length of the longest string in the array
+    let maxLength = Math.max(...input.map(str => str.length));
+
+    // Loop through each index up to the length of the longest string
+    for (let i = 0; i < maxLength; i++) {
+        // Loop through each string and get the character at the current index (if exists)
+        input.forEach(str => {
+            if (str[i]) {
+                result += str[i];
+            }
+        });
+    }
+
+    return result;
+}
+
+const strArr = ['chi', 'gha', 'ahi'];
+console.log(combineStrings(strArr));  // Output: "cgahhhiai"
+
+// Second way sorted the repeated ones
+function combine(arr) {
+    let charCnt = {}
+    let res = ''
+    let non = []
+    let re = []
+
+    arr.forEach(str => {
+        for (let i = 0; i < str.length; i++) {
+            charCnt[str[i]] = (charCnt[str[i]] || 0) + 1
+            res += str[i]
+        }
+    })
+
+    for (let item of res) {
+        if (charCnt[item] === 1) {
+            non.push(item)
+        } else {
+            re.push(item)
+        }
+    }
+
+    return non.join('') + re.sort().join('')
+}
+
+const input1 = ['chi', 'gha', 'ahi'];
+console.log(combine(input1)) // Output: "cgaahhhii"
+

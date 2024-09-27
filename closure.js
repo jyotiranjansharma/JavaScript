@@ -78,3 +78,29 @@ let a = 100;
 // Passing argument here 
 var close = outest()("Hi Closures"); // this will give you outer function
 close(); // this will give you inner function and equivalent
+
+// Example 5 Counter
+function createCounter() {
+    let count = 0;
+
+    return {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getValue: function() {
+            return count;
+        }
+    };
+}
+
+const counter = createCounter();
+
+console.log(counter.increment()); // 1
+console.log(counter.increment()); // 2
+console.log(counter.decrement()); // 1
+console.log(counter.getValue());  // 1

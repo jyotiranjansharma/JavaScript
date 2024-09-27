@@ -368,3 +368,36 @@ function printFormat(n) {
     }
 }
 printFormat(6)
+
+// Vation digital coding outputs
+var output = (function (x) {
+    delete x;
+    return x;
+})(0);
+
+console.log(output);
+
+let person = {
+    name: "Leonardo"
+};
+
+let animal = {
+    species: "snake"
+};
+
+Object.freeze(person);
+person.name = "Lima";
+console.log(person);
+
+
+function a() { 
+    console.log('First'); 
+    b()
+    .then((msg) => console.log(msg))
+    .catch(err => console.log(err)); 
+    console.log('Third'); 
+} 
+
+function b() { 
+    return new Promise((resolve, reject) => { resolve('Second'); }); 
+}

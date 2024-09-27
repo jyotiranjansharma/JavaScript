@@ -1,5 +1,6 @@
 // In JavaScript, classes are a way to create reusable and maintainable code by encapsulating data and behavior. 
-// They are syntactic sugar over JavaScript's existing prototype-based inheritance and provide a more familiar, object-oriented syntax for creating and managing objects.
+// They are syntactic sugar over JavaScript's existing prototype-based inheritance and provide a more familiar, 
+// object-oriented syntax for creating and managing objects.
 
 // Basic Class Syntax
 // Define a class
@@ -53,7 +54,8 @@ const rex = new Dog('Rex', 'German Shepherd');
 // Call the methods
 rex.speak(); // Output: Rex barks.
 
-// Getters and Setters: Getters and setters allow you to define methods that behave like properties. They are useful for controlling how properties are accessed and mutated.
+// Getters and Setters: Getters and setters allow you to define methods that behave like properties. 
+// They are useful for controlling how properties are accessed and mutated.
 class Rectangle {
     constructor(width, height) {
         this.width = width;
@@ -121,7 +123,7 @@ console.log(MathUtils.square(5)); // Output: 25
 
 // Private Fields: Private fields are declared with a # prefix and can only be accessed within the class they are defined in.
 class Counter {
-    #count = 0; // Private field
+    #count = 0; // Private field are denoted by a '#' symbol
 
     increment() {
         this.#count++;
